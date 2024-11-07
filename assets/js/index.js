@@ -162,6 +162,10 @@ function validateDataStructure(data) {
     if (data.length < 3) {
         throw new Error('Enter the data separated by comma (e.g: name, city, email)');
     }
+
+    if (data.length > 3) {
+        throw new Error('There is too much data (just enter: name, city, email)');
+    }
 }
 
 showCounter();
