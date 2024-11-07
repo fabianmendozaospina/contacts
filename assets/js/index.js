@@ -4,6 +4,8 @@ const VALID_CHARS_REGEX = /^[a-zA-Z\s]{2,}$/;
 const VALID_EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const NO_VALID_MSG = 'not valid!';
 const EMAIL_EXISTS = 'Email belong another contact!';
+const NO_ENOUGH_COMMA_IN_DATA = 'Enter the data separated by comma (e.g: name, city, email)';
+const TOO_MUCH_COMMA_IN_DATA = 'There is too much data (just enter: name, city, email)';
 
 const dataObj = select('.data');
 const addObj = select('.add');
@@ -160,11 +162,11 @@ function showCounter() {
 
 function validateDataStructure(data) {
     if (data.length < 3) {
-        throw new Error('Enter the data separated by comma (e.g: name, city, email)');
+        throw new Error(NO_ENOUGH_COMMA_IN_DATA);
     }
 
     if (data.length > 3) {
-        throw new Error('There is too much data (just enter: name, city, email)');
+        throw new Error(TOO_MUCH_COMMA_IN_DATA);
     }
 }
 
