@@ -28,13 +28,8 @@ To get started locally:
 1. Double-click on file index.html.
 1. The browser will show the starting web page:
 
-   ![](./assets/img/readme-home.jpg)
+   ![](./assets/img/contacts.jpg)
 
-1. Through the top menu, you can navegate to the other web pages, such as `About us` and `Contact us`:
-
-   ![](./assets/img/readme-about-us.jpg)
-
-   ![](./assets/img/readme-contact-us.jpg)
 
 
 
