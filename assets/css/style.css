@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+:root {
+    --app-dark-gray: #141414;
+    --app-medium-gray: #2d2d2d;
+    --app-white-color: #fff;
+    --app-green: #009d5d;
+    --app-contact-width: 185px;
+    --app-contact-height: 100px;
+    --app-border-radius: 5px;
+    
+}
+  
+/* ------------------------------ */
+/*         General Rules          */
+/* ------------------------------ */
+
+body {
+    font-family: 'Poppins', 'Open Sans', sans-serif;
+    background-color: var(--app-dark-gray);
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/* ------------------------------ */
+/*         Contacts Rules         */
+/* ------------------------------ */
+
+.flex {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--app-white-color);
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--app-white-color);
+    letter-spacing: 0.4px;
+    margin: 5px;
+}
+
+input[type=text] {
+    background-color: var(--app-medium-gray);
+    color: var(--app-white-color);    
+    font-size: 12px;
+    height: 30px;
+    width: 300px;
+    border-radius: var(--app-border-radius);
+    padding: 4px 0  6px  10px;
+}
+
+.add {
+    font-size: 12px;
+    height: 30px;
+    width: 90px;
+    background-color: var(--app-green);
+    color: var(--app-white-color);
+    border-radius: var(--app-border-radius);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out; 
+}
+
+.add:hover {
+    color: var(--app-dark-gray);
+}
+
+.data-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px; 
+    gap: 10px;
+}
+
+.contacts-container {
+    background-color: #fff;
+    width: 800px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: var(--app-border-radius);
+    margin-top: 5px;
+}
+
+.contacts-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    margin: 10px; 
+}
+
+.contact {
+    /* width: var(--app-contact-width); */
+    width: calc(100% / 3 - 7px);
+    height: var(--app-contact-height);
+    border-radius: var(--app-border-radius);
+    background-color: var(--app-medium-gray);
+    cursor: pointer;
+}
+
+.message {
+    color: #ff0000;
+    height: 10px;
+    margin-bottom: 10px;
+}
