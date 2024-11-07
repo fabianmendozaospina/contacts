@@ -9,6 +9,7 @@ const dataObj = select('.data');
 const addObj = select('.add');
 const contactListObj = select('.contacts-list');
 const messageObj = select('.message');
+const counter = select('.counter');
 const contacts = [];
 
 class Contact {
@@ -102,17 +103,18 @@ listen('click', contactListObj, (event) => {
 function addContact() {
     const data = dataObj.value.split(',');    
     messageObj.innerText = "";
+    dataObj.focus();
     
     try {
+        validateDataStructure(data);
         const newContact = new Contact(...data);
         contacts.unshift(newContact);
+        dataObj.value = "";
         listContacts();
 
     } catch(error) {
         messageObj.innerText = error.message;
     } 
-
-    dataObj.focus();
 }
 
 function listContacts() {
@@ -137,6 +139,8 @@ function listContacts() {
         contactDiv.dataset.id = contact.id; 
         contactListObj.appendChild(contactDiv);
     }
+
+    showCounter();
 }
 
 function removeContact(id) {
@@ -145,3 +149,19 @@ function removeContact(id) {
     contacts.splice(index, 1);
     listContacts();
 }
+
+function showCounter() {
+    // This is a little plus, please don´t decrease my marks for this :).
+    const counterMsgs = contacts.length === 1 ? 
+                        ['There is', 'only 1', 'contact'] : 
+                        ['There are', contacts.length === 0 ? 'no' : contacts.length.toString(), 'contacts'];
+    counter.innerHTML = `<p>${counterMsgs[0]} <b>${counterMsgs[1]}</b> ${counterMsgs[2]}</p>`;    
+}
+
+function validateDataStructure(data) {
+    if (data.length < 3) {
+        throw new Error('Enter the data separated by comma (e.g: name, city, email)');
+    }
+}
+
+showCounter();

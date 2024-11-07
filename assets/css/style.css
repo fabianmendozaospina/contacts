@@ -1,12 +1,13 @@
 @charset "utf-8";
 
 :root {
-    --app-dark-gray: #141414;
+    --app-dark-gray: #141414; 
     --app-medium-gray: #2d2d2d;
-    --app-white-color: #fff;
+    --app-light-gray: #424242;
+    --app-white: #fff;
+    --app-orange: #a04a03;
     --app-green: #009d5d;
-    --app-contact-width: 185px;
-    --app-contact-height: 100px;
+    --app-contact-height: 95px;
     --app-border-radius: 5px;
     
 }
@@ -41,21 +42,21 @@ h1 {
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: var(--app-white-color);
-    margin-bottom: 5px;
+    color: var(--app-white);
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 12px;
     font-weight: 400;
-    color: var(--app-white-color);
+    color: var(--app-white);
     letter-spacing: 0.4px;
     margin: 5px;
 }
 
 input[type=text] {
     background-color: var(--app-medium-gray);
-    color: var(--app-white-color);    
+    color: var(--app-white);    
     font-size: 12px;
     height: 30px;
     width: 300px;
@@ -68,14 +69,10 @@ input[type=text] {
     height: 30px;
     width: 90px;
     background-color: var(--app-green);
-    color: var(--app-white-color);
+    color: var(--app-white);
     border-radius: var(--app-border-radius);
     cursor: pointer;
     transition: all 0.25s ease-in-out; 
-}
-
-.add:hover {
-    color: var(--app-dark-gray);
 }
 
 .data-container {
@@ -86,7 +83,6 @@ input[type=text] {
 }
 
 .contacts-container {
-    background-color: #fff;
     width: 800px;
     height: 350px;
     display: flex;
@@ -104,16 +100,33 @@ input[type=text] {
 }
 
 .contact {
-    /* width: var(--app-contact-width); */
     width: calc(100% / 3 - 7px);
     height: var(--app-contact-height);
     border-radius: var(--app-border-radius);
     background-color: var(--app-medium-gray);
+    border: 1px solid var(--app-light-gray);
     cursor: pointer;
+    padding: 10px;
+}
+
+.contact:hover {
+    border: 1px solid var(--app-green);
 }
 
 .message {
     color: #ff0000;
     height: 10px;
     margin-bottom: 10px;
+}
+
+.counter {
+    background-color: var(--app-orange); 
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 5px;
+    width: 180px;
+    text-align:center;
 }
